@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            border: 3px solid white;
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        svg {            
+            overflow: visible;
+        }
+
+
+        h1 {
+            border: 2px solid white;
+        }
+        .grid-example {
+            display: grid;
+            grid-template-columns: 500px 500px;
+            row-gap: 50px;
+            column-gap: 50px;
+        }
+        img {
+            width: 100%;
+        }
+        .GFG {
+            -webkit-columns: 20px 2;
+            /* Chrome, Safari, Opera */
+            -moz-columns: 60px 2;
+            /* Firefox */
+            columns: 60px 2;
+        }
+        .row {
+        display: flex;
+        }
+
+        .column {
+        flex: 50%;
+        }
+    </style>
+</head>
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<!-- we're using d3 version 6 (the latest version) for all out work -->
+
+<script>
+     let SFO = svg.append("text")
+             .attr(100, 150)
+             .attr(100, 300)
+             .attr("class", "shadow")
+             .style("font-weight", "bold")
+             .style("font-family", "sans-serif")
+             .style("font-size", "12px")
+             .style("stroke", "FFFFFF")
+             .style("stroke-width", .33)
+             .style("fill", "#000000")
+             .text("San Francisco")
+    svg.append("text")
+             .text("Text with the background")
+             .attr("y", 190)
+             .attr("x", 150)
+             .attr("font-size", 36)
+             .attr("font-family", "monospace")
+             .attr("fill", "white");
+
+// Features of the annotation
+    const annotations = [
+    {
+        note: {
+        label: "Here is the annotation label",
+        title: "Annotation title"
+        },
+        x: 100,
+        y: 100,
+        dy: 100,
+        dx: 100
+    }
+    ]
+
+    // Add annotation to the chart
+    const makeAnnotations = d3.annotation()
+    .annotations(annotations)
+    d3.select("#example1")
+    .append("g")
+    .call(makeAnnotations)
+</script>
+<body>
+    
+
+    <div class="chart-container">
+        <h1 class="headline">
+            What We Actually Know About How Americans Are Moving During Covid
+        </h1>
+
+        <div>
+        <h5>America's largest, densest, most expensive cities — namely, San Francisco and Manhattan — experienced some changes in people’s migration. We hear stories about people living cities and changing their living preferences, but we might not still have enough evidence to prove it. The question is where are these people going and why? Were they looking to avoid big rents? densely populated cities? high taxes? bad weather? We still do not have enough information, but here is what we know...
+        </h5>
+        </div>
+        <div><h2>During the Pandemic</h2></div>
+        <div class="row">
+            <div class="column">
+                <h3>People from New York are moving to...</h3>
+            </div>
+            <div class="column">
+                <h3>People from San Francisco are moving to...</p>
+                </h3>
+            </div>
+          </div>
+        <div class="GFG">
+              
+        </div>
+
+        <div class="grid-example">
+            <img src="NYC.svg">
+            <img src="SFO.svg">
+            
+                        
+        </div>
+        <div> <p> <h6> Source: United Van Lines. Note: Numbers are interest in moving, which is the number of people requesting a quote to move out of a specific location </h6></p></div>
+        <div>
+
+    </div>
+<h2> Pre-pandemic trends</h2>
+    <p>
+        <h5>
+During the previous period taxpayers under the age of 35 were more likely to move than older taxpayers. However, taxpayers within the two youngest age groups, under 26 and under-35, accounted for less than a third of all returns (28.4 percent), but half of all migrant tax returns (52.9 percent) taxpayers in the 26-under-35 age bracket comprising the largest share of migrant returns (33.5 percent). 
+</h5></p>
+    
+    <div class="grid-example">
+        
+        <img src="young_taxpayers.svg">
+        <img src="Average_income.svg">
+    </div>
+    <div><h6>Source: Internal Revenue Service Statistics.</h6></div>
+    <div class="grid-example">
+        <img src="NYC_n.svg">
+        <img src="California_n.svg">
+        
+                    
+    </div>
+    <div><h6>Source: Bloomberg based on Internal Revenue Service Statistics.</h6></div>
+    <div class="grid-example">
+        <img src="UNEMPLOYMENT.svg">
+    </div>
+    <div><h6>Source: Bureau of Labor Statistics.</h6></div>
+</body>
